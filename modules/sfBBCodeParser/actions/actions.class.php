@@ -20,6 +20,5 @@ class sfBBCodeParserActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     $this->bb_parser = new sfBBCodeParser();
-    $this->setLayout('layout_debug');
   }
 }

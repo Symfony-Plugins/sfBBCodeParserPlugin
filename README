@@ -51,7 +51,7 @@ Installation
 
         $ symfony plugin:install sfBBCodeParserPlugin
 
-(or download and unzip in your /plugins directory)
+(or download and unzip in your /plugins directory or make a SVN:externals)
 
  * Clear you cache
 
@@ -60,14 +60,38 @@ Installation
 Configuration
 =============
 
-The plugins is bundled with 2 configurations files:
+The plugins comes with 2 configurations files:
 
 * `config/bb_code_parser_config.yml`: witch contains the main configuration.
+
+        config:
+          quotestyle: "double"
+          quotewhat:  "all"
+          open:       "["
+          close:      "]"
+          xmlclose:   true
+          filters:    "Basic,Extended,Images,Links,Lists,Email"
+
 * `config/bb_code_parser_tags.yml`: witch contains the configuration for the
   filters and their tags.
   
-To customize these configurations, just copy them in the `config` folder of your project
-or your application. Then feel free to add filters, tags...
+        filters:
+          Basic:
+            b:
+              htmlopen:   "strong"
+              htmlclose:  "strong"
+              allowed:    "all"
+              attributes: { }
+            i:
+              htmlopen:   "em"
+              htmlclose:  "em"
+              allowed:    "all"
+              attributes: { }
+         # ...
+  
+To customize these configurations, just copy this 2 files in the `config` folder
+of your project or your application. They will automatically override the ones
+provided by the plugin. Then, feel free to add filters, tags...
 
 Usage
 =====
@@ -75,11 +99,13 @@ Usage
  * Instantiate a `sfBBCodeParser` object:
 
         [php]
+        // actions.class.php
         $this->bb_parser = new sfBBCodeParser();
     
  * Then use the `qparse` function of the object:     
 
         [php]
+        // indexSuccess.php
         <h1>sfBBCodeParser demo</h1>
         
         <table>
@@ -232,6 +258,19 @@ Usage
           </tr>
         </table>        
 
+>**Note**
+>If your escaping strategy is set to `on`:
+>
+>     # settings.yml
+>     # Output escaping settings
+>     escaping_strategy:      on   # Determines how variables are made ...
+>
+>You will have to call the `getRawValue()` function on your parser object in order
+>not to have the output escaped:
+> 
+>     [php]
+>     <?php echo $bb_parser->getRawValue()->qparse('[b]Bold[/b]'); ?>
+
 Extend the plugin
 =================
 
@@ -243,14 +282,20 @@ If you want to create your filters, let's say the filter called `myFilter`:
 
 >**Note**
 >To know how to implement your filter class, look at the standard filter classes
->like `sfBBCodeParser_Filter_Email` provided by the plugin and check [the library API on the PEAR website](http://pear.php.net/package/HTML_BBCodeParser/docs/latest/). 
+>like `sfBBCodeParser_Filter_Email` provided by the plugin and check 
+>[the library API on the PEAR website](http://pear.php.net/package/HTML_BBCodeParser/docs/latest/). 
 
 Demo
 ====
 
 If you want to see the demo, enable the `sfBBCodeParser` module in your `settings.yml`
 file, then call the `/sfBBCodeParser` URL. (If you have desactivated the default symfony routes, 
-a `routing.yml` file is included in the `config` folder of the plugin. 
+a `routing.yml` file is included in the `config` folder of the plugin. (copy paste it
+in the `routing.yml` of your application.
+
+>**Note**
+>If the demo doesn't work, check the note above about the escaping strategy of your
+>application.
        
 TODO
 ====
@@ -260,8 +305,8 @@ TODO
 Support
 =======
 
-Please report bugs on the symfony TRAC, i could also answer if you ask on
-the symfony mailing list
+Please report bugs on the symfony TRAC, i can also answer if you ask on the symfony
+mailing list.
 
 Changelog
 =========
@@ -269,10 +314,10 @@ Changelog
 >**Note**
 >Check the changelog TAB 
 
-Bugs:
+Bugs
 ====
 
-* The ImageFilter does not allow to have spaces in alt or title attributes
+* The `Image` filter does not allow to have spaces in alt or title attributes.
 
 ----
 
