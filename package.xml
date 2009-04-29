@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfBBCodeParserPlugin</name>
+ <channel>pear.symfony-project.com</channel>
+ <summary>This a plugin to parse BBCode, it is based on the PEAR library HTML_BBCodeParser</summary>
+ <description></description>
+ <lead>
+  <name>Loïc Vernet</name>
+  <user>COil</user>
+  <email>qrf_coil@yahoo.fr</email>
+  <active>yes</active>
+ </lead>
+ <date>2009-04-29</date>
+ <version>
+   <release>1.0.0</release>
+   <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.symfony-project.com/license">MIT license</license>
+ <notes>-</notes>
+ <contents>
+  <dir name="/">
+  <dir name="config">
+   <file name="app.yml" role="data"/>
+   <file name="config.php" role="data"/>
+  </dir>
+  <dir name="lib">
+    <dir name="BBCodeParser">
+     <dir name="Filter">
+      <file name="BasicFilter.php" role="data"/>
+      <file name="EmailFilter.class.php" role="data"/>
+      <file name="ExtendedFilter.php" role="data"/>
+      <file name="Filter.class.php" role="data"/>
+      <file name="ImagesFilter.php" role="data"/>
+      <file name="LinksFilter.php" role="data"/>
+      <file name="ListsFilter.php" role="data"/>
+     </dir>
+     <file name="sfBBCodeParser.class.php" role="data"/>
+     <file name="sfBBCodeParserConfig.class.php" role="data"/>
+    </dir>
+   </dir>
+   <file name="LICENSE" role="data"/>
+   <file name="README" role="data"/>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.1.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.2.0</min>
+    <max>1.3.0</max>
+    <exclude>1.3.0</exclude>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease>
+ </phprelease>
+ <changelog>
+ </changelog>
+</package>
