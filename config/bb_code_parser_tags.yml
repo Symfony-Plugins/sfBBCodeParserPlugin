@@ -31,3 +31,65 @@ filters:
       htmlclose:  "sup"
       allowed:    "all"
       attributes: { }
+      
+  Extended:
+    color:
+      htmlopen:  "span"
+      htmlclose: "span"
+      allowed:    all"
+      attributes: { color: "style=%2$scolor:%1$s%2$s" }
+    size:
+      htmlopen: "span"
+      htmlclose: "span"
+      allowed:   "all"
+      attributes: { size: "style=%2$sfont-size:%1$spt%2$s" }
+    font:
+      htmlopen:   "span"
+      htmlclose:  "span"
+      allowed:    "all"
+      attributes: { font: "style=%2$sfont-family:%1$s%2$s" }
+    align:
+      htmlopen:   "div"
+      htmlclose:  "div"
+      allowed:    "all"
+      attributes: { align: "style=%2$stext-align:%1$s%2$s" }
+    quote:
+      htmlopen:   "q"
+      htmlclose:  "q"
+      allowed:    "all"
+      attributes: { quote: "cite=%2$s%1$s%2$s" }
+    code:
+      htmlopen:   "code"
+      htmlclose:  "code"
+      allowed:    "all"
+      attributes: { }
+    h1:
+      htmlopen:   "h1"
+      htmlclose:  "h1"
+      allowed:    "all"
+      attributes: { }
+    h2:
+      htmlopen:   "h2"
+      htmlclose:  "h2"
+      allowed:    "all"
+      attributes: { }
+    h3:
+      htmlopen:   "h3"
+      htmlclose:  "h3"
+      allowed:    "all"
+      attributes: { }
+    h4:
+      htmlopen:   "h4"
+      htmlclose:  "h4"
+      allowed:    "all"
+      attributes: { }
+    h5:
+      htmlopen:   "h5"
+      htmlclose:  "h5"
+      allowed:    "all"
+      attributes: { }
+    h6:
+      htmlopen:   "h6"
+      htmlclose:  "h6"
+      allowed:    "all"
+      attributes: { }

@@ -5,4 +5,4 @@ config:
   close:      "]"
   xmlclose:   true
   #filters:    "Basic,Extended,Images,Links,Lists,Email"
-  filters:    "Basic"  
+  filters:    "Basic,Extended"

@@ -65,6 +65,25 @@
  </dependencies>
  <phprelease>
  </phprelease>
- <changelog>
- </changelog>
+  <changelog>
+    <release>
+      <version>
+        <release>1.0.0</release>
+        <api>1.0.0</api>
+      </version>
+      <stability>
+       <release>stable</release>
+       <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2009-04-29</date>
+      <license>MIT</license>
+      <notes>
+        * New version for symfony 1.2
+        * Added a demo module
+        * Added a new config handler for the main config, the filters and the tags      
+        * Reorganized svn structure of the plugin, created 1.0 branch and trunk for sf 1.2
+      </notes>
+    </release>  
+  </changelog>
 </package>
