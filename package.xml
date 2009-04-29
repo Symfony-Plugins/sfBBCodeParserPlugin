@@ -2,8 +2,49 @@
 <package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>sfBBCodeParserPlugin</name>
  <channel>pear.symfony-project.com</channel>
- <summary>This a plugin to parse BBCode, it is based on the PEAR library HTML_BBCodeParser</summary>
- <description></description>
+ <summary>This a plugin to parse BBCode, it is based on the HTML_BBCodeParser PEAR library</summary>
+ <description>The **sfBBCodeParserPlugin** allows you to parse *BBCode* and get the corresponding html
+output. There are 6 available filters who provide the following tags:
+
+* Basic
+  * b
+  * i
+  * u
+  * s
+  * sub
+  * sup
+* Extended:
+  * color
+  * size
+  * font
+  * align
+  * quote
+  * code
+  * h1
+  * h2
+  * h3
+  * h4
+  * h5
+  * h6
+* Images
+  * img
+* Links:
+  * url
+* Lists
+  * list
+  * ulist
+  * li
+* Email
+  * Email 
+
+You can activate the filters you want, for each filter you can also tell witch tags 
+can be use. And finally you can make your own filters with your own tags. 
+Almost everything can be configured in the plugin, filters, tags, attributes, opening 
+and closing character...
+
+The plugin is based on the [PEAR library HTML_BBCodeParser](http://pear.php.net/package/HTML_BBCodeParser)
+but the PEAR dependencies were removed so you don't have to install it in order
+to use the plugin.</description>
  <lead>
   <name>Loïc Vernet</name>
   <user>COil</user>
@@ -20,14 +61,16 @@
   <api>stable</api>
  </stability>
  <license uri="http://www.symfony-project.com/license">MIT license</license>
- <notes>-</notes>
+ <notes>This is the first version for symfony 1.2</notes>
  <contents>
   <dir name="/">
-  <dir name="config">
-   <file name="app.yml" role="data"/>
-   <file name="config.php" role="data"/>
-  </dir>
-  <dir name="lib">
+   <dir name="config">
+    <file name="bb_code_parser_config.yml" role="data"/>
+    <file name="bb_code_parser_tags.yml" role="data"/>
+    <file name="config_handlers.yml" role="data"/>   
+    <file name="routing.yml" role="data"/>
+   </dir>
+   <dir name="lib">
     <dir name="BBCodeParser">
      <dir name="Filter">
       <file name="BasicFilter.php" role="data"/>
@@ -39,7 +82,22 @@
       <file name="ListsFilter.php" role="data"/>
      </dir>
      <file name="sfBBCodeParser.class.php" role="data"/>
-     <file name="sfBBCodeParserConfig.class.php" role="data"/>
+    </dir>
+    <dir name="config">
+     <file name="sfBBCodeParserPluginConfigHandler.class.php" role="data"/>
+    </dir>
+   </dir>
+   <dir name="modules">
+    <dir name="sfBBCodeParser">
+     <dir name="actions">
+      <file name="actions.class.php" role="data"/>
+     </dir>
+     <dir name="config">
+      <file name="view.yml" role="data"/>
+     </dir>
+     <dir name="templates">
+      <file name="indexSuccess.php" role="data"/>
+     </dir>
     </dir>
    </dir>
    <file name="LICENSE" role="data"/>
