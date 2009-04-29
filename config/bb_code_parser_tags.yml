@@ -1,0 +1,33 @@
+# Be carefull, the filters names are case sensitive (*B*asic) 
+filters:
+  Basic:
+    b:
+      htmlopen:   "strong"
+      htmlclose:  "strong"
+      allowed:    "all"
+      attributes: { }
+    i:
+      htmlopen:   "em"
+      htmlclose:  "em"
+      allowed:    "all"
+      attributes: { }
+    u:
+      htmlopen:   span style="text-decoration:underline;"
+      htmlclose:  "span"
+      allowed:    "all"
+      attributes: { }
+    s:
+      htmlopen:   "del"
+      htmlclose:  "del"
+      allowed:    "all"
+      attributes: { }
+    sub:
+      htmlopen:   "sub"
+      htmlclose:  "sub"
+      allowed:    "all"
+      attributes: { }
+    sup:
+      htmlopen:   "sup"
+      htmlclose:  "sup"
+      allowed:    "all"
+      attributes: { }

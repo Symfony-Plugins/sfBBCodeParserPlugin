@@ -1,0 +1,224 @@
+<?php
+
+/**
+ * Config file for dcBBCodeParserPlugin
+ * 
+ * @author COil
+ * @since  19 mar 08
+ */
+
+// BB settings in app.yml of plugin ============================================
+$bb_config_keys = sfConfig::get('app_sfBBCodeParserPlugin_config');
+$bb_config = array();
+foreach ($bb_config_keys as $bb_config_key)
+{
+  list($key, $val) = each($bb_config_key);
+  $bb_config[$key] = $val;
+}  
+sfBBCodeParserConfig::setConfig($bb_config);
+
+
+// Now define all tags for each filter =========================================
+
+
+// Basic filter
+$definedTags = array(
+  
+  'b' => array(
+    'htmlopen'  => 'strong',
+    'htmlclose' => 'strong',
+    'allowed'   => 'all',
+    'attributes'=> array()),
+  
+  'i' => array(
+    'htmlopen'  => 'em',
+    'htmlclose' => 'em',
+    'allowed'   => 'all',
+    'attributes'=> array()),
+  
+  'u' => array(
+    'htmlopen'  => 'span style="text-decoration:underline;"',
+    'htmlclose' => 'span',
+    'allowed'   => 'all',
+    'attributes'=> array()),
+  
+  's' => array(
+    'htmlopen'  => 'del',
+    'htmlclose' => 'del',
+    'allowed'   => 'all',
+    'attributes'=> array()),
+  
+  'sub' => array(
+    'htmlopen'  => 'sub',
+    'htmlclose' => 'sub',
+    'allowed'   => 'all',
+    'attributes'=> array()),
+  
+  'sup' => array(
+    'htmlopen'  => 'sup',
+    'htmlclose' => 'sup',
+    'allowed'   => 'all',
+    'attributes'=> array())
+);
+sfBBCodeParserConfig::setDefinedTagsForFilter(
+  sfBBCodeParser_Filter_Basic::$_filterName,
+  $definedTags
+);
+
+
+// Extended filter
+$definedTags = array(
+  'color' => array(
+    'htmlopen'  => 'span',
+    'htmlclose' => 'span',
+    'allowed'   => 'all',
+    'attributes'=> array('color' =>'style=%2$scolor:%1$s%2$s')),
+  
+  'size' => array(
+    'htmlopen'  => 'span',
+    'htmlclose' => 'span',
+    'allowed'   => 'all',
+    'attributes'=> array('size' =>'style=%2$sfont-size:%1$spt%2$s')),
+  
+  'font' => array(
+    'htmlopen'  => 'span',
+    'htmlclose' => 'span',
+    'allowed'   => 'all',
+    'attributes'=> array('font' =>'style=%2$sfont-family:%1$s%2$s')),
+  
+  'align' => array(
+    'htmlopen'  => 'div',
+    'htmlclose' => 'div',
+    'allowed'   => 'all',
+    'attributes'=> array('align' =>'style=%2$stext-align:%1$s%2$s')),
+  
+  'quote' => array(
+    'htmlopen'  => 'q',
+    'htmlclose' => 'q',
+    'allowed'   => 'all',
+    'attributes'=> array('quote' =>'cite=%2$s%1$s%2$s')),
+  
+  'code' => array(
+    'htmlopen'  => 'code',
+    'htmlclose' => 'code',
+    'allowed'   => 'all',
+    'attributes'=> array()),
+  
+  'h1' => array(
+    'htmlopen'  => 'h1',
+    'htmlclose' => 'h1',
+    'allowed'   => 'all',
+    'attributes'=> array()),
+
+  'h2' => array(
+    'htmlopen'  => 'h2',
+    'htmlclose' => 'h2',
+    'allowed'   => 'all',
+    'attributes'=> array()),
+
+  'h3' => array(
+    'htmlopen'  => 'h3',
+    'htmlclose' => 'h3',
+    'allowed'   => 'all',
+    'attributes'=> array()),
+
+  'h4' => array(
+    'htmlopen'  => 'h4',
+    'htmlclose' => 'h4',
+    'allowed'   => 'all',
+    'attributes'=> array()),
+
+  'h5' => array(
+    'htmlopen'  => 'h5',
+    'htmlclose' => 'h5',
+    'allowed'   => 'all',
+    'attributes'=> array()),
+
+  'h6' => array(
+    'htmlopen'  => 'h6',
+    'htmlclose' => 'h6',
+    'allowed'   => 'all',
+    'attributes'=> array())
+);
+sfBBCodeParserConfig::setDefinedTagsForFilter(
+  sfBBCodeParser_Filter_Extended::$_filterName,
+  $definedTags
+);
+
+
+// Links filter
+$definedTags = array(
+  'url' => array(
+    'htmlopen'  => 'a',
+    'htmlclose' => 'a',
+    'allowed'   => 'none^img',
+    'attributes'=> array('url' => 'href=%2$s%1$s%2$s')
+  )
+);
+sfBBCodeParserConfig::setDefinedTagsForFilter(
+  sfBBCodeParser_Filter_Links::$_filterName,
+  $definedTags
+);
+
+
+// Images filter
+$definedTags = array(
+  'img' => array(
+    'htmlopen'  => 'img',
+    'htmlclose' => '',
+    'allowed'   => 'none',
+    'attributes'=> array(
+      'img'   => 'src=%2$s%1$s%2$s',
+      'w'     => 'width=%2$s%1$d%2$s',
+      'h'     => 'height=%2$s%1$d%2$s',
+      'alt'   => 'alt=%2$s%1$s%2$s',
+)));
+sfBBCodeParserConfig::setDefinedTagsForFilter(
+  sfBBCodeParser_Filter_Images::$_filterName, 
+  $definedTags
+);
+
+
+// Lists filter
+$definedTags = array(
+  'list'  => array(
+    'htmlopen'  => 'ol',
+    'htmlclose' => 'ol',
+    'allowed'   => 'all',
+    'child'     => 'none^li',
+    'attributes'=> array('list'  => 'style=%2$slist-style-type:%1$s;%2$s')),
+
+  'ulist' => array(
+    'htmlopen'  => 'ul',
+    'htmlclose' => 'ul',
+    'allowed'   => 'all',
+    'child'     => 'none^li',
+    'attributes'=> array('list'  => 'style=%2$slist-style-type:%1$s;%2$s')),
+
+  'li'    => array(
+    'htmlopen'  => 'li',
+    'htmlclose' => 'li',
+    'allowed'   => 'all',
+    'parent'    => 'none^ulist,list',
+    'attributes'=> array()
+));
+sfBBCodeParserConfig::setDefinedTagsForFilter(
+  sfBBCodeParser_Filter_Lists::$_filterName, 
+  $definedTags
+);
+
+
+// Email filter 
+$definedTags = array(
+  'email' => array(
+    'htmlopen'  => 'a',
+    'htmlclose' => 'a',
+    'allowed'   => 'none^img',
+    'attributes'=> 
+      array(
+        'email' =>'href="%2$smailto:%1$s%2$s"'
+)));
+sfBBCodeParserConfig::setDefinedTagsForFilter(
+  sfBBCodeParser_Filter_Email::$_filterName, 
+  $definedTags
+);
