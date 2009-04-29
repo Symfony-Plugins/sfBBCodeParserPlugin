@@ -4,20 +4,12 @@
  * @package  sfBBCodeParserPlugin
  * @author   Stijn de Reede  <sjr@gmx.co.uk>
  * @author   COil
- * @since    1.0.0 - 20 mar 08
+ * @since    1.0.0 - 29 avr 09
  */
 
 class sfBBCodeParser_Filter_Images extends sfBBCodeParser_Filter
 {
 
-  /**
-   * Code name of filter.
-   * 
-   * @author COil
-   * @since  1.0.0 - 20 mar 08
-   */
-  public static $_filterName = 'Images';
-  
   /**
    * New constructor to retrieve the tags for the filter from 
    * the sf configuation.
@@ -31,7 +23,7 @@ class sfBBCodeParser_Filter_Images extends sfBBCodeParser_Filter
     parent::__construct($options);
 
     // Now retrieves the attributes from the config file
-    $this->_definedTags = sfBBCodeParserConfig::getDefinedTagsForFilter(self::$_filterName);
+    $this->_definedTags = sfBBCodeParserPluginConfigHandler::getDefinedTagsForFilter('Images');
   }  
 
  /**
@@ -55,7 +47,7 @@ class sfBBCodeParser_Filter_Images extends sfBBCodeParser_Filter
   */
   function _preparse()
   {
-    $options = sfBBCodeParserConfig::getConfig();
+    $options = sfBBCodeParserPluginConfigHandler::getConfig();
 
     $o  = $options['open'];
     $c  = $options['close'];

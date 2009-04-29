@@ -93,3 +93,46 @@ filters:
       htmlclose:  "h6"
       allowed:    "all"
       attributes: { }
+
+  Images:
+    img:
+      htmlopen: "img"
+      htmlclose: ""
+      allowed:    "none"
+      attributes: { src: "src=%2$s%1$s%2$s", w: "width=%2$s%1$d%2$s", h: "height=%2$s%1$d%2$s", alt: "alt=%2$s%1$s%2$s", title: "title=%2$s%1$s%2$s" }
+
+  Links:
+    url:
+      htmlopen:  "a"
+      htmlclose: "a"
+      allowed:   "none^img"
+      attributes: { href: "href=%2$s%1$s%2$s" }
+
+  Lists:
+    list:
+      htmlopen:   "ol"
+      htmlclose:  "ol"
+      allowed:    "all"
+      child:      "none^li"
+      attributes: { list: "style=%2$slist-style-type:%1$s;%2$s" }
+
+    ulist:
+      htmlopen:   "ul"
+      htmlclose:  "ul"
+      allowed:    "all"
+      child:      "none^li"
+      attributes: { list: "style=%2$slist-style-type:%1$s;%2$s" }
+
+    li:
+      htmlopen:   "li"
+      htmlclose:  "li"
+      allowed:    "all"
+      parent:     "none^ulist,list"
+      attributes: { }
+
+  Email:      
+    email:
+      htmlopen:   "a"
+      htmlclose:  "a"
+      allowed:    "none^img"
+      attributes: { email: href="%2$smailto:%1$s%2$s" }

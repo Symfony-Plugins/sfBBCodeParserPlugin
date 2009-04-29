@@ -4,7 +4,7 @@
  * @package  sfBBCodeParserPlugin
  * @author   Stijn de Reede  <sjr@gmx.co.uk>
  * @author   COil
- * @since    1.0.0 - 19 mar 08
+ * @since    1.0.0 - 29 avr 09
  */
 
 class sfBBCodeParser_Filter_Email extends sfBBCodeParser_Filter
@@ -15,7 +15,7 @@ class sfBBCodeParser_Filter_Email extends sfBBCodeParser_Filter
    * the sf configuation.
    * 
    * @author COil
-   * @since  19 mar 08
+   * @since  29 avr 09
    */
   public function __construct($options = array())
   {
@@ -47,7 +47,7 @@ class sfBBCodeParser_Filter_Email extends sfBBCodeParser_Filter
    */
   function _preparse()
   {
-    $options = sfBBCodeParserConfig::getConfig();
+    $options = sfBBCodeParserPluginConfigHandler::getConfig();
 
     $o = $options['open'];
     $c = $options['close'];

@@ -4,20 +4,12 @@
  * @package  sfBBCodeParserPlugin
  * @author   Stijn de Reede  <sjr@gmx.co.uk>
  * @author   COil
- * @since    1.0.0 - 20 mar 08
+ * @since    1.0.0 - 29 avr 09
  */
 
 class sfBBCodeParser_Filter_Links extends sfBBCodeParser_Filter
 {
 
-  /**
-   * Code name of filter.
-   * 
-   * @author COil
-   * @since  1.0.0 - 19 mar 08  
-   */
-  public static $_filterName = 'Links';
-  
   /**
    * List of allowed schemes
    *
@@ -47,7 +39,7 @@ class sfBBCodeParser_Filter_Links extends sfBBCodeParser_Filter
     parent::__construct($options);
 
     // Now retrieves the attributes from the config file
-    $this->_definedTags = sfBBCodeParserConfig::getDefinedTagsForFilter(self::$_filterName);
+    $this->_definedTags = sfBBCodeParserPluginConfigHandler::getDefinedTagsForFilter('Links');
   }    
 
   /**
@@ -69,7 +61,7 @@ class sfBBCodeParser_Filter_Links extends sfBBCodeParser_Filter
    */
   function _preparse()
   {
-    $options = sfBBCodeParserConfig::getConfig();
+    $options = sfBBCodeParserPluginConfigHandler::getConfig();
     $o = $options['open'];
     $c = $options['close'];
     $oe = $options['open_esc'];
@@ -96,7 +88,7 @@ class sfBBCodeParser_Filter_Links extends sfBBCodeParser_Filter
    */
   function smarterPPLinkExpand($matches)
   {
-    $options = sfBBCodeParserConfig::getConfig();
+    $options = sfBBCodeParserPluginConfigHandler::getConfig();
     $o = $options['open'];
     $c = $options['close'];
 
@@ -152,7 +144,7 @@ class sfBBCodeParser_Filter_Links extends sfBBCodeParser_Filter
    */
   function smarterPPLink($matches)
   {
-    $options = sfBBCodeParserConfig::getConfig();
+    $options = sfBBCodeParserPluginConfigHandler::getConfig();
     $o = $options['open'];
     $c = $options['close'];
 

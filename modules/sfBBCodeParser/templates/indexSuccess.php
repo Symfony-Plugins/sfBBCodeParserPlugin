@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <td cospan="3"><h2>Basic filter</h2></td>
+    <td colspan="3"><h2>Basic filter</h2></td>
   </tr>
   <tr>
     <td>[b]Bold[/b]</td>
@@ -35,8 +35,7 @@
     <td><?php echo $bb_parser->qparse('Normal [sup]Sup[/sup]'); ?></td>
   </tr>
   <tr>
-    <hr/>
-    <td cospan="3"><h2>Extended filter</h2></td>
+    <td colspan="3"><hr/><h2>Extended filter</h2></td>
   </tr>
   <tr>
     <td>[color="#FF7F50"]Color #FF7F50[/color]</td>
@@ -97,5 +96,56 @@
     <td>[h6]Title 6[/h6]</td>
     <td>:</td>
     <td><?php echo $bb_parser->qparse('[h6]Title 6[/h6]'); ?></td>
-  </tr>  
+  </tr>
+  <tr>    
+    <td colspan="3"><hr/><h2>Images</h2></td>
+  </tr>
+  <tr>
+    <td>
+      [img 
+        src="http://www.symfony-project.org/downloads/logos/symfony.gif" 
+        alt="Symfony_logo" 
+        title="Symfony_rocks!"][/img]</td>
+    <td>:</td>
+    <td><?php echo $bb_parser->qparse('[img src="http://www.symfony-project.org/downloads/logos/symfony.gif" alt="Symfony_logo" title="Symfony_rocks!"][/img]'); ?></td>
+  </tr>
+  <tr>
+    <td colspan="3"><hr/><h2>Links</h2></td>
+  </tr>
+  <tr>
+    <td>
+    [url 
+      href="http://www.symfony-project.org/plugins/sfBBCodeParserPlugin"]
+        Back to plugin homepage
+    [/url]
+    </td>
+    <td>:</td>
+    <td><?php echo $bb_parser->qparse('[url href="http://www.symfony-project.org/plugins/sfBBCodeParserPlugin"]Back to plugin homepage[/url]'); ?></td>
+  </tr>
+  <tr>
+    <td colspan="3"><hr/><h2>Lists</h2></td>
+  </tr>
+  <tr>
+    <td>[list][*]Element 1 [*]Element 2[/list]</td>
+    <td>:</td>
+    <td><?php echo $bb_parser->qparse('[list][*]Element 1 [*]Element 2[/list]'); ?></td>
+  </tr>
+  <tr>
+    <td>[ulist][*]Element 1 [*]Element 2[/list]</td>
+    <td>:</td>
+    <td><?php echo $bb_parser->qparse('[ulist][*]Element 1 [*]Element 2[/ulist]'); ?></td>
+  </tr>
+  <tr>
+    <td>[li]Element 1[/li][li]Element 2[/li]</td>
+    <td>:</td>
+    <td><?php echo $bb_parser->qparse('[li]Element 3[/li][li]Element 4[/li]'); ?></td>
+  </tr>
+  <tr>
+    <td colspan="3"><hr/><h2>Email</h2></td>
+  </tr>
+  <tr>
+    <td>[email="toto@domain.com"]toto@domain.com[/email]</td>
+    <td></td>
+    <td><?php echo $bb_parser->qparse('[email="toto@domain.com"]toto@domain.com[/email]'); ?></td>
+  </tr>
 </table>
