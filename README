@@ -2,7 +2,7 @@ sfBBCodeParserPlugin
 --------------------
 
 The **sfBBCodeParserPlugin** allows you to parse *BBCode* and get the corresponding html
-output. There are 6 available filters who provide the following tags:
+output. There are 6 available filters which provide the following tags:
 
 * Basic
   * b
@@ -35,8 +35,8 @@ output. There are 6 available filters who provide the following tags:
 * Email
   * Email 
 
-You can activate the filters you want, for each filter you can also tell witch tags 
-can be use. And finally you can make your own filters with your own tags. 
+You can activate the filters you want; for each filter you can also decide which tags 
+can be used. And finally you can make your own filters with your own tags. 
 Almost everything can be configured in the plugin, filters, tags, attributes, opening 
 and closing character...
 
@@ -53,7 +53,7 @@ Installation
 
 (or download and unzip in your /plugins directory or make a SVN:externals)
 
- * Clear you cache
+ * Clear your cache
 
         $ symfony cc
 
@@ -62,7 +62,7 @@ Configuration
 
 The plugins comes with 2 configurations files:
 
-* `config/bb_code_parser_config.yml`: witch contains the main configuration.
+* `config/bb_code_parser_config.yml`: contains the main configuration
 
         config:
           quotestyle: "double"
@@ -72,7 +72,7 @@ The plugins comes with 2 configurations files:
           xmlclose:   true
           filters:    "Basic,Extended,Images,Links,Lists,Email"
 
-* `config/bb_code_parser_tags.yml`: witch contains the configuration for the
+* `config/bb_code_parser_tags.yml`: contains the configuration for the
   filters and their tags.
   
         filters:
@@ -89,14 +89,14 @@ The plugins comes with 2 configurations files:
               attributes: { }
          # ...
   
-To customize these configurations, just copy this 2 files in the `config` folder
+To customize the configuration, just copy these 2 files into the `config` folder
 of your project or your application. They will automatically override the ones
-provided by the plugin. Then, feel free to add filters, tags...
+provided by the plugin. Then, feel free to add filters, tags, etc.
 
 Usage
 =====
 
- * Instantiate a `sfBBCodeParser` object:
+ * Instantiate an `sfBBCodeParser` object:
 
         [php]
         // actions.class.php
@@ -276,7 +276,7 @@ Extend the plugin
 
 If you want to create your filters, let's say the filter called `myFilter`:
 
-* Create the class `sfBBCodeParser_Filter_myFilter``in you lib directory
+* Create the class `sfBBCodeParser_Filter_myFilter``in your lib/ directory
 * Add this filter in the `config/bb_code_parser_config.yml` file
 * Add the related tags in the `config/bb_code_parser_tags.yml`
 
@@ -289,8 +289,8 @@ Demo
 ====
 
 If you want to see the demo, enable the `sfBBCodeParser` module in your `settings.yml`
-file, then call the `/sfBBCodeParser` URL. (If you have desactivated the default symfony routes, 
-a `routing.yml` file is included in the `config` folder of the plugin. (copy paste it
+file, then call the `/sfBBCodeParser` URL. (If you have de-activated the default symfony routes, 
+a `routing.yml` file is included in the `config` folder of the plugin. (copy/paste it
 in the `routing.yml` of your application.
 
 >**Note**
@@ -305,7 +305,7 @@ TODO
 Support
 =======
 
-Please report bugs on the symfony TRAC, i can also answer if you ask on the symfony
+Please report bugs on the symfony TRAC, I can also answer if you ask on the symfony
 mailing list.
 
 Changelog
