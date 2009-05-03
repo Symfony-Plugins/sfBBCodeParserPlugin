@@ -4,45 +4,11 @@
  <channel>pear.symfony-project.com</channel>
  <summary>This a plugin to parse BBCode, it is based on the HTML_BBCodeParser PEAR library</summary>
  <description>The **sfBBCodeParserPlugin** allows you to parse *BBCode* and get the corresponding html
-output. There are 6 available filters who provide the following tags:
-
-* Basic
-  * b
-  * i
-  * u
-  * s
-  * sub
-  * sup
-* Extended:
-  * color
-  * size
-  * font
-  * align
-  * quote
-  * code
-  * h1
-  * h2
-  * h3
-  * h4
-  * h5
-  * h6
-* Images
-  * img
-* Links:
-  * url
-* Lists
-  * list
-  * ulist
-  * li
-* Email
-  * Email 
-
-You can activate the filters you want, for each filter you can also tell witch tags 
+output. You can activate the filters you want, for each filter you can also tell witch tags 
 can be use. And finally you can make your own filters with your own tags. 
 Almost everything can be configured in the plugin, filters, tags, attributes, opening 
 and closing character...
-
-The plugin is based on the [PEAR library HTML_BBCodeParser](http://pear.php.net/package/HTML_BBCodeParser)
+The plugin is based on the PEAR library HTML_BBCodeParser http://pear.php.net/package/HTML_BBCodeParser
 but the PEAR dependencies were removed so you don't have to install it in order
 to use the plugin.</description>
  <lead>
