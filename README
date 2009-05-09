@@ -91,7 +91,7 @@ The plugins comes with 2 configurations files:
   
 To customize the configuration, just copy these 2 files into the `config` folder
 of your project or your application. They will automatically override the ones
-provided by the plugin. Then, feel free to add filters, tags, etc.
+provided by the plugin. Then, feel free to add/delete filters, add/delete tags...
 
 Usage
 =====
