@@ -33,13 +33,13 @@ output. There are 6 available filters which provide the following tags:
   * ulist
   * li
 * Email
-  * Email 
+  * email 
 
 You can activate the filters you want; for each filter you can also decide which tags 
 can be used. And finally you can make your own filters with your own tags. 
 Almost everything can be configured in the plugin, filters, tags, attributes, opening 
 and closing character...
-
+ 
 The plugin is based on the [PEAR library HTML_BBCodeParser](http://pear.php.net/package/HTML_BBCodeParser)
 but the PEAR dependencies were removed so you don't have to install it in order
 to use the plugin.
@@ -90,7 +90,7 @@ The plugins comes with 2 configurations files:
          # ...
   
 To customize the configuration, just copy these 2 files into the `config` folder
-of your project or your application. They will automatically override the ones
+of your project or your application. They will automatically override the one
 provided by the plugin. Then, feel free to add/delete filters, add/delete tags...
 
 Usage
@@ -292,6 +292,8 @@ If you want to see the demo, enable the `sfBBCodeParser` module in your `setting
 file, then call the `/sfBBCodeParser` URL. (If you have de-activated the default symfony routes, 
 a `routing.yml` file is included in the `config` folder of the plugin. (copy/paste it
 in the `routing.yml` of your application.
+ 
+You can also check the live demo on my [symfony blog](http://snippets.strangebuzz.com/sfBBCodeParser).
 
 >**Note**
 >If the demo doesn't work, check the note above about the escaping strategy of your
@@ -317,7 +319,7 @@ Changelog
 Bugs
 ====
 
-* The `Image` filter does not allow to have spaces in alt or title attributes.
+* The `img` tag does not allow to have spaces in alt or title attributes.
 
 ----
 

@@ -17,17 +17,17 @@ to use the plugin.</description>
   <email>qrf_coil@yahoo.fr</email>
   <active>yes</active>
  </lead>
- <date>2009-04-29</date>
+ <date>2009-05-10</date>
  <version>
-   <release>1.0.0</release>
-   <api>1.0.0</api>
+   <release>1.0.1</release>
+   <api>1.0.1</api>
  </version>
  <stability>
   <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.symfony-project.com/license">MIT license</license>
- <notes>This is the first version for symfony 1.2</notes>
+ <notes></notes>
  <contents>
   <dir name="/">
    <dir name="config">
@@ -90,6 +90,22 @@ to use the plugin.</description>
  <phprelease>
  </phprelease>
   <changelog>
+    <release>
+      <version>
+        <release>1.0.1</release>
+        <api>1.0.1</api>
+      </version>
+      <stability>
+       <release>stable</release>
+       <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2009-05-10</date>
+      <license>MIT</license>
+      <notes>
+        * Added demo link in README
+      </notes>
+    </release>  
     <release>
       <version>
         <release>1.0.0</release>
