@@ -4,38 +4,14 @@ sfBBCodeParserPlugin
 The **sfBBCodeParserPlugin** allows you to parse *BBCode* and get the corresponding html
 output. There are 6 available filters which provide the following tags:
 
-* Basic
-  * b
-  * i
-  * u
-  * s
-  * sub
-  * sup
-* Extended:
-  * color
-  * size
-  * font
-  * align
-  * quote
-  * code
-  * h1
-  * h2
-  * h3
-  * h4
-  * h5
-  * h6
-* Images
-  * img
-* Links:
-  * url
-* Lists
-  * list
-  * ulist
-  * li
-* Email
-  * email 
+* Basic (b, i, u, s, sub, sup)
+* Extended (color, size, font, align, quote, code, h1 to h6)
+* Images (img)
+* Links (url)
+* Lists (list, ulist, li)
+* Email (email)
 
-You can activate the filters you want; for each filter you can also decide which tags 
+You can activate the filters you want. For each filter you can also decide which tags 
 can be used. And finally you can make your own filters with your own tags. 
 Almost everything can be configured in the plugin, filters, tags, attributes, opening 
 and closing character...
@@ -51,7 +27,7 @@ Installation
 
         $ symfony plugin:install sfBBCodeParserPlugin
 
-(or download and unzip in your /plugins directory or make a SVN:externals)
+(or download and unzip in your /plugins directory or checkout with [SVN](http://svn.symfony-project.com/plugins/sfBBCodeParserPlugin/trunk/))
 
  * Clear your cache
 
@@ -96,7 +72,7 @@ provided by the plugin. Then, feel free to add/delete filters, add/delete tags..
 Usage
 =====
 
- * Instantiate an `sfBBCodeParser` object:
+ * Instantiate a `sfBBCodeParser` object:
 
         [php]
         // actions.class.php
@@ -259,7 +235,7 @@ Usage
         </table>        
 
 >**Note**
->If your escaping strategy is set to `on`:
+>If your escaping strategy is set to `on`: (this is the default case for symfony 1.3 and 1.4)
 >
 >     # settings.yml
 >     # Output escaping settings
@@ -274,7 +250,7 @@ Usage
 Extend the plugin
 =================
 
-If you want to create your filters, let's say the filter called `myFilter`:
+If you want to create your own filters, let's say the filter called `myFilter`:
 
 * Create the class `sfBBCodeParser_Filter_myFilter``in your lib/ directory
 * Add this filter in the `config/bb_code_parser_config.yml` file
@@ -289,7 +265,7 @@ Demo
 ====
 
 If you want to see the demo, enable the `sfBBCodeParser` module in your `settings.yml`
-file, then call the `/sfBBCodeParser` URL. (If you have de-activated the default symfony routes, 
+file, then call the `/sfBBCodeParser` URL. (If you have desactivated the default symfony routes,
 a `routing.yml` file is included in the `config` folder of the plugin. (copy/paste it
 in the `routing.yml` of your application.
  
@@ -310,6 +286,8 @@ Support
 Please report bugs on the symfony TRAC, I can also answer if you ask on the symfony
 mailing list.
 
+See you. [COil](http://www.strangebuzz.com) :)
+
 Changelog
 =========
 
@@ -319,14 +297,10 @@ Changelog
 Bugs
 ====
 
-* The `img` tag does not allow to have spaces in alt or title attributes.
-
-----
-
-See you. [COil](http://www.strangebuzz.com) :)
+* The `img` tag doesn't allow to have spaces in alt or title attributes.
 
 ----
 
 This plugin is sponsored by [SQL Technologies](http://www.sqltechnologies.com)
 
- ![SQL Technologies](http://www.php-debug.com/images/sql.gif)
+![SQL Technologies](http://www.php-debug.com/images/sql.gif)
